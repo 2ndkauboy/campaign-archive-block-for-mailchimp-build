@@ -25,7 +25,7 @@ jobs:
         run: npm run build
 
       - name: Git commit compiled files
-        run: git commit -am "adding build files"
+        run: git commit -am "adding build files" --author="GitHub Actions <gh@example.com>"
 
       - name: Git archive current version
         run: git archive HEAD -o campaign-archive-block-for-mailchimp.zip

@@ -10,7 +10,7 @@ jobs:
   prepare:
     name: "Prepare the artifact"
     # Don't run on forks.
-    if: github.repository_owner == 'Yoast'
+    if: github.repository_owner == '2ndkauboy'
 
     runs-on: ubuntu-latest
 
@@ -91,7 +91,7 @@ jobs:
   deploy:
     name: "Deploy to dist"
     # Don't run on forks.
-    if: github.repository_owner == 'Yoast'
+    if: github.repository_owner == '2ndkauboy'
 
     needs: prepare
 

@@ -18,6 +18,12 @@ jobs:
         with:
           composer-options: "--ignore-platform-reqs --optimize-autoloader"
 
+      - name: Set up node and enable caching of dependencies
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+          cache: 'yarn'
+
       - name: Yarn install
         run: Yarn install
 

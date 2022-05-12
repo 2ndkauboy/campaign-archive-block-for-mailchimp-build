@@ -24,10 +24,15 @@ jobs:
       - name: NPM build
         run: npm run build
 
+      - name: Set Git config
+        env:
+          ACTOR: ${{ github.actor }}
+        run: |
+          git config user.name 'GitHub Action'
+          git config user.email "$ACTOR@users.noreply.github.com"
+
       - name: Git commit compiled files
-        run: git config --global user.email "gh@example.com" \
-             git config --global user.name "GitHub Actions" \
-             git commit -am "adding build files"
+        run: git commit -am "adding build files"
 
       - name: Git archive current version
         run: git archive HEAD -o campaign-archive-block-for-mailchimp.zip

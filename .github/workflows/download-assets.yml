@@ -1,3 +1,7 @@
+name: Downlaod Assets
+
+on: [push]
+
 env:
   DIST_ORG: 'Yoast-dist'
   DIST_DEFAULT_BRANCH: 'master'

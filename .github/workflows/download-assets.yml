@@ -16,7 +16,7 @@ jobs:
 
       - uses: ramsey/composer-install@v2
         with:
-          composer-options: "--ignore-platform-reqs --optimize-autoloader"
+          composer-options: "--no-dev --ignore-platform-reqs --optimize-autoloader"
 
       - name: NPM install
         run: npm install
@@ -30,6 +30,9 @@ jobs:
         run: |
           git config user.name 'GitHub Action'
           git config user.email "$ACTOR@users.noreply.github.com"
+
+      - name: Adding ignored folders
+        run: git add -f build/ vendor/
 
       - name: Git commit compiled files
         run: git commit -am "adding build files"

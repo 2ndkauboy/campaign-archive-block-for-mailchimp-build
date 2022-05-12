@@ -1,7 +1,6 @@
 name: Release Download Artifact
-on:
-  release:
-    types: [published]
+on: [push]
+
 jobs:
   tag:
     name: New release

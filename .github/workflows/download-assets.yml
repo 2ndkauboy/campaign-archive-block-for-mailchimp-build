@@ -18,17 +18,11 @@ jobs:
         with:
           composer-options: "--ignore-platform-reqs --optimize-autoloader"
 
-      - name: Set up node and enable caching of dependencies
-        uses: actions/setup-node@v3
-        with:
-          node-version: '14'
-          cache: 'yarn'
+      - name: NPM install
+        run: npm install
 
-      - name: Yarn install
-        run: Yarn install
-
-      - name: Yarn build
-        run: yarn build
+      - name: NPM build
+        run: npm run build
 
       - name: Create download asset
         uses: actions/upload-artifact@v3

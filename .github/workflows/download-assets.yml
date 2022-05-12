@@ -10,9 +10,10 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Composer install
-      - uses: "shivammathur/setup-php@v2"
+        uses: "shivammathur/setup-php@v2"
         with:
           php-version: "5.6"
+
       - uses: ramsey/composer-install@v2
         with:
           composer-options: "--ignore-platform-reqs --optimize-autoloader"
